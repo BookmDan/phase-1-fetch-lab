@@ -1,6 +1,19 @@
-function fetchBooks() {
+async function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  // try {
+  //   const response = await fetch('https://anapioficeandfire.com/api/books');
+  //   if (!response.ok) {
+  //     throw new Error('Network response was not ok');
+  //   }
+  //   const books = await response.json();
+  //   renderBooks(books);
+  // } catch (error) {
+  //   console.error('Error fetching books:', error);
+  // }
+  fetch("https://anapioficeandfire.com/api/books")
+  .then((resp) => resp.json())
+  .then((json) => console.log(json));
+
 }
 
 function renderBooks(books) {
@@ -12,6 +25,13 @@ function renderBooks(books) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchBooks();
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   fetchBooks();
+// });
+
+
+
+module.exports = {
+  fetchBooks
+};
+

@@ -1,4 +1,5 @@
 require ( './helpers.js' );
+const { fetchBooks } = require('../index'); // Adjust the path based on your file structure
 
 const sinon = require( 'sinon' );
 const helpers = require( './helpers' );
